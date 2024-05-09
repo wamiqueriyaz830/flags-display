@@ -7,19 +7,22 @@ const Flags = () => {
   
   const flagDisplay=async()=>{
     setLoading(true)
+    const url="https://restcountries.com/v3.1/all"
     try {
        
-        const url="https://restcountries.com/v3.1/all"
+       
         const res= await fetch(url)
         const  data= await res.json()
         // console.log(data,"data");
         setFlags(data)  
         // console.log(flags,"flagss")
-        setLoading(false)
+        
     } catch (error) {
       console.log(error); 
-      setLoading(false) 
+      
     } 
+   
+setLoading(false) 
   }
 
   useEffect(()=>{
